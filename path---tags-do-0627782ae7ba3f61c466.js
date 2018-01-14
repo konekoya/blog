@@ -1,0 +1,2 @@
+webpackJsonp([0xc06ddbfabe9d],{316:function(e,t){e.exports={pathContext:{posts:[{html:"<h1>YEES, we do!</h1>\n<p>Haha, that's something we have to remeber, right? Josh?</p>",id:"/Users/joshua/Desktop/side-projects/my-blog/src/pages/2018-01-10/index.md absPath of file >>> MarkdownRemark",frontmatter:{date:"2018-01-10T06:13:59.165Z",path:"/yes-we-do",title:"Yes, we do!",excerpt:"Yes, we do have this, right?",tags:["yes","we","do"]}}],tagName:"do"}}}});
+//# sourceMappingURL=path---tags-do-0627782ae7ba3f61c466.js.map

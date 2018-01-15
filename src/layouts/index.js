@@ -2,10 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import styled, { injectGlobal } from 'styled-components';
 
 import Header from './Header';
 import Footer from './Footer';
-import './index.css';
+import Container from './Container';
+import { theme } from '../utils/const';
+
+injectGlobal`
+  body {
+    margin: 0;
+    font-size: 100%;
+    font-family: 'source-han-sans-traditional', 'Noto Sans TC', 'PingFang TC',
+    'Apple LiGothic Medium', Roboto, 'Microsoft JhengHei', 'Lucida Grande',
+    'Lucida Sans Unicode', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${theme.primary}
+  }
+`;
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -20,16 +37,7 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
+    <Container>{children()}</Container>
     <Footer />
   </div>
 );

@@ -1,7 +1,9 @@
 import React from 'react';
 
+import Container from './Container';
+
 const Footer = () => {
-  return <div>Copyright © 2018 konekoya.</div>;
+  return <Container>Copyright © 2018 konekoya.</Container>;
 };
 
 export default Footer;

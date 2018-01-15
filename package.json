@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "konekoya-blog",
+  "description": "Konekoya's personal blog",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "keywords": ["gatsby"],
+  "author": "konekoya <konekoya@gmail.com>",
+  "keywords": ["Blog, Frontend, Web, React, Redux"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {

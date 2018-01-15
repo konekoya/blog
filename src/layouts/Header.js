@@ -7,7 +7,7 @@ const Header = () => (
   <div className="Header">
     <div className="Header-inner">
       <h1>
-        <Link to="/">Thoughts by Joshua</Link>
+        <Link to="/">Konekoya</Link>
       </h1>
       <span className="Header__slogan">I talk everything about Front-End</span>
     </div>

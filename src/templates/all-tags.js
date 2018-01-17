@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
 const AllTags = ({ pathContext }) => {
@@ -10,7 +11,7 @@ const AllTags = ({ pathContext }) => {
         <ul>
           {tags.map(tag => {
             return (
-              <li>
+              <li key={tag}>
                 <Link to={`/tags/${tag}`}>{tag}</Link>
               </li>
             );
@@ -19,6 +20,10 @@ const AllTags = ({ pathContext }) => {
       </div>
     );
   }
+};
+
+AllTags.propTypes = {
+  pathContext: PropTypes.object.isRequired,
 };
 
 export default AllTags;

@@ -3,16 +3,18 @@
   "description": "Konekoya's personal blog",
   "version": "1.0.0",
   "author": "konekoya <konekoya@gmail.com>",
-  "keywords": [
-    "Blog, Frontend, Web, React, Redux"
-  ],
+  "keywords": ["Blog, Frontend, Web, React, Redux"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
+    "start": "npm-run-all --parallel develop lint:watch",
+    "lint": "esw src --cache",
+    "lint:watch": "yarn lint --watch",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
   "dependencies": {
     "gatsby": "^1.9.145",
@@ -24,7 +26,19 @@
     "styled-components": "^2.4.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "enzyme": "3.3.0",
+    "enzyme-to-json": "3.3.0",
+    "eslint": "^4.6.1",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-watch": "^3.1.0",
     "gh-pages": "^1.1.0",
+    "jest": "20.0.4",
+    "npm-run-all": "^4.1.2",
     "prettier": "^1.9.2"
   }
 }

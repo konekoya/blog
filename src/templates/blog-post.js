@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
-const Template = ({ data, location, pathContext }) => {
+const Template = ({ data, pathContext }) => {
   const { markdownRemark: post } = data;
   const { frontmatter, html } = post;
   const { title, date } = frontmatter;
@@ -51,5 +52,10 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+Template.propTypes = {
+  data: PropTypes.object.isRequired,
+  pathContext: PropTypes.object.isRequired,
+};
 
 export default Template;

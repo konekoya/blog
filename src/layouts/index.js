@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-import styled, { injectGlobal } from 'styled-components';
+import { injectGlobal } from 'styled-components';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -24,23 +23,25 @@ injectGlobal`
   }
 `;
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="Konekoya"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        {
-          name: 'keywords',
-          content: 'Frontend, React, Redux, CSS, JavaScript, HTML',
-        },
-      ]}
-    />
-    <Header />
-    <Container>{children()}</Container>
-    <Footer />
-  </div>
-);
+const TemplateWrapper = ({ children }) => {
+  return (
+    <div>
+      <Helmet
+        title="Konekoya"
+        meta={[
+          { name: 'description', content: 'Sample' },
+          {
+            name: 'keywords',
+            content: 'Frontend, React, Redux, CSS, JavaScript, HTML',
+          },
+        ]}
+      />
+      <Header />
+      <Container>{children()}</Container>
+      <Footer />
+    </div>
+  );
+};
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

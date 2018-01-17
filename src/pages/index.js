@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
 const IndexPage = ({ data }) => {
@@ -49,5 +50,9 @@ export const query = graphql`
     }
   }
 `;
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export default IndexPage;

@@ -8,6 +8,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
+    "predeploy": "yarn lint && yarn build",
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "start": "npm-run-all --parallel develop lint:watch",

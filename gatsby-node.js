@@ -1,8 +1,8 @@
 const path = require('path');
 
 const createTagPages = (createPage, posts) => {
-  const tagPageTemplate = path.resolve(`src/templates/tags.js`);
-  const allTagsTemplate = path.resolve(`src/templates/all-tags.js`);
+  const tagPageTemplate = path.resolve('src/templates/tags.js');
+  const allTagsTemplate = path.resolve('src/templates/all-tags.js');
 
   const postsByTags = {};
 
@@ -21,7 +21,7 @@ const createTagPages = (createPage, posts) => {
   const tags = Object.keys(postsByTags);
 
   createPage({
-    path: `/tags`,
+    path: '/tags',
     component: allTagsTemplate,
     context: {
       tags: tags.sort(),
@@ -44,7 +44,7 @@ const createTagPages = (createPage, posts) => {
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+  const blogPostTemplate = path.resolve('src/templates/blog-post.js');
 
   // If you are experiencing issues with the ordering of the posts on the homepage,
   // replace the `allMarkdownRemark` line below with something like this:

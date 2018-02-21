@@ -3,7 +3,9 @@
   "description": "Konekoya's personal blog",
   "version": "1.0.0",
   "author": "konekoya <konekoya@gmail.com>",
-  "keywords": ["Blog, Frontend, Web, React, Redux"],
+  "keywords": [
+    "Blog, Frontend, Web, React, Redux"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -14,16 +16,16 @@
     "start": "npm-run-all --parallel develop lint:watch",
     "lint": "esw src --cache",
     "lint:watch": "yarn lint --watch",
-    "format":
-      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
   "dependencies": {
     "gatsby": "^1.9.145",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-styled-components": "^2.0.4",
+    "gatsby-remark-prismjs": "^1.2.15",
     "gatsby-source-filesystem": "^1.5.11",
-    "gatsby-transformer-remark": "^1.7.26",
+    "gatsby-transformer-remark": "^1.7.33",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {

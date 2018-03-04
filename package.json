@@ -16,6 +16,7 @@
     "start": "npm-run-all --parallel develop lint:watch",
     "lint": "esw src --cache",
     "lint:watch": "yarn lint --watch",
+    "test": "jest",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
   "dependencies": {
@@ -30,7 +31,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "babel-jest": "^20.0.3",
+    "babel-jest": "^22.4.1",
     "enzyme": "3.3.0",
     "enzyme-to-json": "3.3.0",
     "eslint": "^4.6.1",
@@ -40,7 +41,7 @@
     "eslint-plugin-react": "^7.1.0",
     "eslint-watch": "^3.1.0",
     "gh-pages": "^1.1.0",
-    "jest": "20.0.4",
+    "jest": "22.4.2",
     "npm-run-all": "^4.1.2",
     "prettier": "^1.9.2"
   }

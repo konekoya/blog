@@ -8,7 +8,8 @@ import Footer from './Footer';
 import Container from './Container';
 import { theme } from '../utils/const';
 
-import 'prismjs/themes/prism-okaidia.css';
+// import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/themes/prism.css';
 
 injectGlobal`
   body {

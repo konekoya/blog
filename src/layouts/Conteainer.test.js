@@ -3,9 +3,12 @@ import { shallow } from 'enzyme';
 
 import Container from './Container';
 
-describe('describes your test here!', () => {
-  test('expect ture to be true', () => {
-    const wrapper = shallow(<Container>test</Container>);
+describe('<Container />', () => {
+  test('renders self', () => {
+    const children = 'test';
+    const wrapper = shallow(<Container>{children}</Container>);
+
     expect(wrapper).toHaveLength(1);
+    expect(wrapper.props().children).toBe(children);
   });
 });

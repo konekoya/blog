@@ -1,2 +1,0 @@
-webpackJsonp([0xb1c9b4629b57],{330:function(t,e){t.exports={pathContext:{posts:[{html:"<h2>因為這是新的一年...</h2>",id:"/Users/joshua/Desktop/side-projects/blog/src/pages/2018-01-15-in-the-beginning/index.md absPath of file >>> MarkdownRemark",frontmatter:{date:"2018-01-15",path:"/in-the-beginning",title:"好吧，讓我們來寫點前端的東西",excerpt:"",tags:["前端","開始","廢文"]}}],tagName:"前端"}}}});
-//# sourceMappingURL=path---tags-前端-2ca69736812c296e47c8.js.map

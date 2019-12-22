@@ -1,0 +1,85 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="preload" href="/blog/component---src-layouts-index-js-b696825fc5b76c19b65b.js" as="script"/><link rel="preload" href="/blog/component---src-templates-blog-post-js-39e51612a699b20c1a87.js" as="script"/><link rel="preload" href="/blog/path---styled-components-tips-and-tricks-0fdc70ae15eb7d2f946f.js" as="script"/><link rel="preload" href="/blog/app-2e271f7b11dd7021ed46.js" as="script"/><link rel="preload" href="/blog/commons-6f9e826ebe596f46b347.js" as="script"/><script id="webpack-manifest">/*<![CDATA[*/window.webpackManifest={"231608221292675":"app-2e271f7b11dd7021ed46.js","205117723866763":"component---src-templates-all-tags-js-680373f541bfc36738a0.js","50739212244294":"component---src-templates-tags-js-540d858e7388ef5ac168.js","107818501498521":"component---src-templates-blog-post-js-39e51612a699b20c1a87.js","162898551421021":"component---src-pages-404-js-4503918ea3a16cfcdb75.js","35783957827783":"component---src-pages-index-js-66f4cb0df06a956b057e.js","218538773642512":"component---src-pages-page-2-js-075954cd9c4544c7dcd8.js","60335399758886":"path----557518bd178906f8d58a.js","55702396619907":"path---tags-efa629c22c37a78b35f0.js","134928267902561":"path---tags-gatsby-6dddfd824681cbe37c1f.js","240209056751939":"path---tags-how-to-a7972a61de0ec7787cb5.js","84586273293571":"path---tags-react-178d1dffdb65bd2ca960.js","210808885453544":"path---tags-styled-components-d0705415e4bb26dfe3b1.js","195479872904023":"path---tags-前端-131a8943b4826a6dbd79.js","271636732393132":"path---styled-components-tips-and-tricks-0fdc70ae15eb7d2f946f.js","30621681072108":"path---in-the-beginning-a7d5c60fb43b573d8a8f.js","254022195166212":"path---404-a0e39f21c11f6a62c5ab.js","142629428675168":"path---index-fa7d3d7db98ff9032d3c.js","135728916539164":"path---page-2-a0e39f21c11f6a62c5ab.js","178698757827068":"path---404-html-a0e39f21c11f6a62c5ab.js","114276838955818":"component---src-layouts-index-js-b696825fc5b76c19b65b.js"}/*]]>*/</script><style type="text/css" data-styled-components="dmpWJW cHmJaY dhMoY iLBKIS ebuLwu dHNpcf" data-styled-components-is-local="true">/* sc-component-id: sc-bdVaJa */
+
+.dhMoY{margin:0 auto;max-width:960px;padding:20px;}
+/* sc-component-id: sc-bwzfXH */
+
+.dmpWJW{background-color:#2c3da7;margin-bottom:20px;}
+/* sc-component-id: sc-htpNat */
+
+.cHmJaY{padding:20px;}
+/* sc-component-id: sc-bxivhb */
+
+.iLBKIS{font-size:30px;margin:0;}
+/* sc-component-id: sc-ifAKCX */
+
+.ebuLwu{color:white;text-decoration:none;}
+/* sc-component-id: sc-EHOje */
+
+.dHNpcf{color:#9da9f7;font-size:13px;font-style:italic;}
+</style><style type="text/css" data-styled-components="" data-styled-components-is-local="false">/* sc-component-id: sc-global-60868067 */
+body{margin:0;font-size:100%;font-family:'source-han-sans-traditional','Noto Sans TC','PingFang TC', 'Apple LiGothic Medium',Roboto,'Microsoft JhengHei','Lucida Grande', 'Lucida Sans Unicode',sans-serif;}a{text-decoration:none;color:#2c3da7;}
+</style><style type="text/css" data-styled-components="" data-styled-components-is-local="true"></style><title data-react-helmet="true">幾個 styled-components 使用上的技巧 - My Blog</title><meta data-react-helmet="true" name="description" content="Sample"/><meta data-react-helmet="true" name="keywords" content="Frontend, React, Redux, CSS, JavaScript, HTML"/><script>/*<![CDATA[*/!function(e,t,r){function n(){for(;d[0]&&"loaded"==d[0][f];)c=d.shift(),c[o]=!i.parentNode.insertBefore(c,i)}for(var s,a,c,d=[],i=e.scripts[0],o="onreadystatechange",f="readyState";s=r.shift();)a=e.createElement(t),"async"in i?(a.async=!1,e.head.appendChild(a)):i[f]?(d.push(a),a[o]=n):e.write("<"+t+' src="'+s+'" defer></'+t+">"),a.src=s}(document,"script",["/blog/commons-6f9e826ebe596f46b347.js","/blog/app-2e271f7b11dd7021ed46.js","/blog/path---styled-components-tips-and-tricks-0fdc70ae15eb7d2f946f.js","/blog/component---src-templates-blog-post-js-39e51612a699b20c1a87.js","/blog/component---src-layouts-index-js-b696825fc5b76c19b65b.js"])/*]]>*/</script><style id="gatsby-inlined-css">code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style></head><body><div id="___gatsby"><div data-reactroot="" data-reactid="1" data-react-checksum="1546635970"><!-- react-empty: 2 --><div class="sc-bwzfXH dmpWJW" data-reactid="3"><div class="sc-bdVaJa dhMoY" data-reactid="4"><h1 class="sc-bxivhb iLBKIS" data-reactid="5"><a class="sc-ifAKCX ebuLwu" href="/blog/" data-reactid="6">Konekoya</a></h1><span class="sc-EHOje dHNpcf" data-reactid="7">I talk everything about Front-End</span></div></div><div class="sc-bdVaJa dhMoY" data-reactid="8"><div data-reactid="9"><!-- react-empty: 10 --><div data-reactid="11"><h1 data-reactid="12">幾個 styled-components 使用上的技巧</h1><h3 data-reactid="13">December 23, 2019</h3><div data-reactid="14"><h2>你不需要把每個元件都用 styled component 包起來</h2>
+<p>剛開始在使用 styled components 的時候我常會去把每個需要套用樣式的元件都用 styled component 包起來，像是：</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code><span class="token keyword">import</span> styled <span class="token keyword">from</span> <span class="token string">"styled-components"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Header <span class="token operator">=</span> styled<span class="token punctuation">.</span>header<span class="token template-string"><span class="token string">`
+  display: flex;
+`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> H1 <span class="token operator">=</span> styled<span class="token punctuation">.</span>h1<span class="token template-string"><span class="token string">`
+  font-weight: normal;
+`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> H2 <span class="token operator">=</span> styled<span class="token punctuation">.</span>H2<span class="token template-string"><span class="token string">`
+  font-size: 22px;
+`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Span <span class="token operator">=</span> styled<span class="token punctuation">.</span>span<span class="token template-string"><span class="token string">`
+  color: #ff4400;
+`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Example</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Header<span class="token operator">></span>
+      <span class="token operator">&lt;</span>H1<span class="token operator">></span>
+        My<span class="token operator">&lt;</span>Span className<span class="token operator">=</span><span class="token string">"highlight"</span><span class="token operator">></span>Website<span class="token operator">&lt;</span><span class="token operator">/</span>Span<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>H1<span class="token operator">></span>
+      <span class="token operator">&lt;</span>H2<span class="token operator">></span>This is an awesome site built by me <span class="token punctuation">:</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>H2<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Header<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+<p>這樣的程式碼寫久了之後就會發現一個問題，一個就是每次你需要給某個元件樣式時，你都需要重新用 styled component 把那個 React 元件/HTML 元素重新命名，光是想名字就很麻煩，而且有時候真的就只是加上一行 CSS 屬性而以。但其實 styled component 也提供了另一種寫法，使用上比較像是 Sass 的用法：</p>
+<div class="gatsby-highlight">
+      <pre class="language-js"><code><span class="token keyword">import</span> styled <span class="token keyword">from</span> <span class="token string">"styled-components"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Header <span class="token operator">=</span> styled<span class="token punctuation">.</span>header<span class="token template-string"><span class="token string">`
+  display: flex;
+
+  h1 {
+    font-weight: normal;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .highlight {
+    color: #ff4400;
+  }
+`</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Example</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Header<span class="token operator">></span>
+      <span class="token operator">&lt;</span>h1<span class="token operator">></span>
+        My<span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token string">"highlight"</span><span class="token operator">></span>Website<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+      <span class="token operator">&lt;</span>h2<span class="token operator">></span>This is an awesome site built by me <span class="token punctuation">:</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Header<span class="token operator">></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+      </div></div><p data-reactid="15"></p><p data-reactid="16"><a href="/blog/in-the-beginning" data-reactid="17"><!-- react-text: 18 -->Next: <!-- /react-text --><!-- react-text: 19 -->用 Gatsby 來建立一個部落格<!-- /react-text --></a></p></div></div></div><div class="sc-bdVaJa dhMoY" data-reactid="20">Copyright © 2019 konekoya.</div></div></div></body></html>

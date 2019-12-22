@@ -1,2 +1,0 @@
-webpackJsonp([30621681072108],{327:function(t,n){t.exports={data:{markdownRemark:{html:"<h2>因為這是新的一年...</h2>",frontmatter:{title:"好吧，讓我們來寫點前端的東西",date:"January 15, 2018",path:"/in-the-beginning",tags:["前端","開始","廢文"],excerpt:""}}},pathContext:{prev:null,next:null}}}});
-//# sourceMappingURL=path---in-the-beginning-5fb2467d5f70e87e6840.js.map

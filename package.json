@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "konekoya <konekoya@gmail.com>",
   "keywords": [
-    "Blog, Frontend, Web, React, Redux"
+    "Blog, Frontend, Web, React"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -48,7 +48,6 @@
     "gh-pages": "^1.1.0",
     "jest": "22.4.2",
     "npm-run-all": "^4.1.2",
-    "prettier": "^1.9.2",
     "react-test-renderer": "^16.2.0"
   }
 }

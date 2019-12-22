@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "gatsby-link";
 
 const AllTags = ({ pathContext }) => {
   const { tags } = pathContext;
@@ -8,7 +8,7 @@ const AllTags = ({ pathContext }) => {
   if (tags) {
     return (
       <div>
-        <ul>
+        <Tags>
           {tags.map(tag => {
             return (
               <li key={tag}>
@@ -16,14 +16,14 @@ const AllTags = ({ pathContext }) => {
               </li>
             );
           })}
-        </ul>
+        </Tags>
       </div>
     );
   }
 };
 
 AllTags.propTypes = {
-  pathContext: PropTypes.object.isRequired,
+  pathContext: PropTypes.object.isRequired
 };
 
 export default AllTags;

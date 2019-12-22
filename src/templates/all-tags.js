@@ -8,7 +8,7 @@ const AllTags = ({ pathContext }) => {
   if (tags) {
     return (
       <div>
-        <Tags>
+        <ul>
           {tags.map(tag => {
             return (
               <li key={tag}>
@@ -16,7 +16,7 @@ const AllTags = ({ pathContext }) => {
               </li>
             );
           })}
-        </Tags>
+        </ul>
       </div>
     );
   }

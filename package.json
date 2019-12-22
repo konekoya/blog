@@ -11,8 +11,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "predeploy": "yarn lint && yarn build --prefix-paths",
-    "deploy": "gh-pages -d public",
+    "prepublish": "yarn lint && yarn build --prefix-paths",
+    "publish": "gh-pages -d public",
     "start": "npm-run-all --parallel develop lint:watch",
     "lint": "esw src --cache",
     "lint:watch": "yarn lint --watch",
@@ -29,6 +29,7 @@
     "gatsby-remark-prismjs": "^1.2.15",
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.33",
+    "prettier": "^1.19.1",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {

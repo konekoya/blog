@@ -1,6 +1,6 @@
 # Konekoya's blog
 
-Hi, I blog everything about FrontEnd! Things that I currently have high interest are: React, Redux, Test Driven Development (TDD), webpack, Chrome Developer Tools, Jest and ESlint.
+Hi, I blog everything about FrontEnd! Things that I currently have high interest are: React, Chrome Developer Tools, React Hooks, End-to-End test.
 
 ## Development
 
@@ -14,20 +14,14 @@ yarn start
 yarn lint
 ```
 
-### Format all JS files with prettier
-
-```
-yarn format
-```
-
 ## Build
 
 ```sh
 yarn build
 ```
 
-## Deploy
+## Publish blog to GitHub
 
 ```sh
-yarn deploy
+yarn publish
 ```

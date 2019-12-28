@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "gatsby-link";
 
-const Tags = ({ pathContext }) => {
-  const { posts, tagName } = pathContext;
+const Tags = ({ pageContext }) => {
+  const { posts, tagName } = pageContext;
 
   if (posts) {
     return (
@@ -13,7 +13,9 @@ const Tags = ({ pathContext }) => {
         </div>
         <ul>
           {posts.map(post => {
-            const { frontmatter: { path, title, date } } = post;
+            const {
+              frontmatter: { path, title, date }
+            } = post;
             return (
               <li key={date}>
                 <Link to={path}>{title}</Link>
@@ -27,7 +29,7 @@ const Tags = ({ pathContext }) => {
 };
 
 Tags.propTypes = {
-  pathContext: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired
 };
 
 export default Tags;

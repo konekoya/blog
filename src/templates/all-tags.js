@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 
-const AllTags = ({ pathContext }) => {
-  const { tags } = pathContext;
+const AllTags = ({ pageContext }) => {
+  const { tags } = pageContext;
 
   if (tags) {
     return (
@@ -23,7 +23,7 @@ const AllTags = ({ pathContext }) => {
 };
 
 AllTags.propTypes = {
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 };
 
 export default AllTags;

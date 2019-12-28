@@ -1,18 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
+import React from "react";
+import PropTypes from "prop-types";
+import Link from "gatsby-link";
+import { graphql } from "gatsby";
 
-const Template = ({ data, pathContext }) => {
+const Template = ({ data, pageContext }) => {
   const { markdownRemark: post } = data;
   const { frontmatter, html } = post;
   const { title, date } = frontmatter;
-  const { next, prev } = pathContext;
+  const { next, prev } = pageContext;
 
   return (
     <div>
-      <Helmet title={`${frontmatter.title} - My Blog`} />
-
       <div>
         <h1>{title}</h1>
         <h3>{date}</h3>
@@ -55,7 +53,7 @@ export const pageQuery = graphql`
 
 Template.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired
 };
 
 export default Template;

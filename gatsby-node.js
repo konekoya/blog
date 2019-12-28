@@ -1,8 +1,8 @@
-const path = require('path');
+const path = require("path");
 
 const createTagPages = (createPage, posts) => {
-  const tagPageTemplate = path.resolve('src/templates/tags.js');
-  const allTagsTemplate = path.resolve('src/templates/all-tags.js');
+  const tagPageTemplate = path.resolve("src/templates/tags.js");
+  const allTagsTemplate = path.resolve("src/templates/all-tags.js");
 
   const postsByTags = {};
 
@@ -21,11 +21,11 @@ const createTagPages = (createPage, posts) => {
   const tags = Object.keys(postsByTags);
 
   createPage({
-    path: '/tags',
+    path: "/tags",
     component: allTagsTemplate,
     context: {
-      tags: tags.sort(),
-    },
+      tags: tags.sort()
+    }
   });
 
   tags.forEach(tagName => {
@@ -36,15 +36,15 @@ const createTagPages = (createPage, posts) => {
       component: tagPageTemplate,
       context: {
         posts,
-        tagName,
-      },
+        tagName
+      }
     });
   });
 };
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
-  const blogPostTemplate = path.resolve('src/templates/blog-post.js');
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+  const blogPostTemplate = path.resolve("src/templates/blog-post.js");
 
   // If you are experiencing issues with the ordering of the posts on the homepage,
   // replace the `allMarkdownRemark` line below with something like this:
@@ -83,8 +83,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         component: blogPostTemplate,
         context: {
           prev: index === 0 ? null : posts[index - 1].node,
-          next: index === posts.length - 1 ? null : posts[index + 1].node,
-        },
+          next: index === posts.length - 1 ? null : posts[index + 1].node
+        }
       });
     });
   });

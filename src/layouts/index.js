@@ -1,17 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { injectGlobal } from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import { createGlobalStyle } from "styled-components";
 
-import Header from './Header';
-import Footer from './Footer';
-import Container from './Container';
-import { theme } from '../utils/const';
+import Header from "./Header";
+import Footer from "./Footer";
+import Container from "./Container";
+import { theme } from "../utils/const";
 
-// import 'prismjs/themes/prism-okaidia.css';
-import 'prismjs/themes/prism.css';
-
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-size: 100%;
@@ -29,16 +25,7 @@ injectGlobal`
 const TemplateWrapper = ({ children }) => {
   return (
     <div>
-      <Helmet
-        title="Konekoya"
-        meta={[
-          { name: 'description', content: 'Sample' },
-          {
-            name: 'keywords',
-            content: 'Frontend, React, Redux, CSS, JavaScript, HTML',
-          },
-        ]}
-      />
+      <GlobalStyle />
       <Header />
       <Container>{children()}</Container>
       <Footer />
@@ -47,7 +34,7 @@ const TemplateWrapper = ({ children }) => {
 };
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 };
 
 export default TemplateWrapper;

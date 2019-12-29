@@ -11,15 +11,16 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "prepublish": "yarn lint && yarn build --prefix-paths",
     "clean": "gatsby clean",
-    "publish": "gh-pages -d public",
+    "predeploy": "yarn lint && yarn build --prefix-paths",
+    "deploy": "gh-pages -d public",
     "start": "npm-run-all --parallel develop lint:watch",
     "lint": "esw src --cache",
     "lint:watch": "yarn lint --watch",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.18.17",
     "gatsby-link": "^2.2.27",
     "gatsby-plugin-react-helmet": "^3.1.18",
@@ -36,7 +37,6 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "babel-jest": "^22.4.1",
-    "babel-plugin-styled-components": "^1.10.6",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.6.1",

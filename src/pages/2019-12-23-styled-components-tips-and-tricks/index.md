@@ -41,3 +41,32 @@ yarn
 ## Linting
 
 這幾年在開始一個新專案的時候，我都要先導入的工具之一就是 [ESLint](https://eslint.org/)，它可以在程式還沒有執行前就先在編輯器裡幫我們做一些靜態的檢查，它分成了兩大部份，一種是程式面的問題檢查，像是：你宣告了變數，但這個變數最後沒有用到，或是你在開發時使用了 debugger 關鍵字，但是沒有移除掉。 另一種檢查是程式排版樣式的檢查，像是 Array 或是 Object 號前後要不要加上一個額外的空白，String 值要用單引號還是雙引號這種不會影響程式運作，而是程式設計者的寫作偏好。
+
+## 套用不同主題到 Code block 上
+
+Gatsby 本身就有支援套用 Code block 的 syntax highlight 功能，但是你需要安裝一些套件來做這件事，接下來就讓我們來套用一個新主題：
+
+先安裝需要的套件：
+
+```sh
+yarn add gatsby-transformer-remark gatsby-remark-prismjs prismjs
+```
+
+安裝完成後，在 `gastby-config.js` 裡新增：
+
+```js
+{
+  resolve: "gatsby-transformer-remark",
+  options: {
+    plugins: [
+      {
+        resolve: "gatsby-remark-prismjs",
+        options: {
+          classPrefix: "language-",
+          showLineNumbers: true
+        }
+      }
+    ]
+  }
+}
+```

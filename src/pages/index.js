@@ -1,8 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Link from "gatsby-link";
-import styled from "styled-components";
-import { graphql } from "gatsby";
+import React from 'react'
+import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
+import styled from 'styled-components'
+import { graphql } from 'gatsby'
+
+import Layout from '../components/Layout'
 
 const Tags = styled.div`
   display: flex;
@@ -17,16 +19,16 @@ const Tags = styled.div`
       color: black;
     }
   }
-`;
+`
 
 const IndexPage = ({ data }) => {
-  const { edges: posts } = data.allMarkdownRemark;
+  const { edges: posts } = data.allMarkdownRemark
   return (
-    <div>
+    <Layout>
       {posts.map(({ node: post }) => {
         const {
-          frontmatter: { date, path, title, excerpt, tags }
-        } = post;
+          frontmatter: { date, path, title, excerpt, tags },
+        } = post
         return (
           <div key={date}>
             <h2>
@@ -40,15 +42,15 @@ const IndexPage = ({ data }) => {
                   <li key={tag}>
                     <Link to={`/tags/${tag}`}>{tag}</Link>
                   </li>
-                );
+                )
               })}
             </Tags>
           </div>
-        );
+        )
       })}
-    </div>
-  );
-};
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query IndexQuery {
@@ -68,10 +70,10 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 IndexPage.propTypes = {
-  data: PropTypes.object.isRequired
-};
+  data: PropTypes.object.isRequired,
+}
 
-export default IndexPage;
+export default IndexPage

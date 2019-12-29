@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{MN1z:function(t,a,n){"use strict";n.r(a);n("q1tI");var e=n("+ZDr"),u=n.n(e),o=n("qKvR");a.default=function(t){var a=t.pageContext,n=a.posts,e=a.tagName;if(n)return Object(o.a)("div",null,Object(o.a)("div",null,Object(o.a)("span",null,"Posts about ",e,":")),Object(o.a)("ul",null,n.map((function(t){var a=t.frontmatter,n=a.path,e=a.title,c=a.date;return Object(o.a)("li",{key:c},Object(o.a)(u.a,{to:n},e))}))))}}}]);
+//# sourceMappingURL=component---src-templates-tags-js-aaa9f4af2a1d4dc6980f.js.map

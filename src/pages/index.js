@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import { graphql } from 'gatsby'
+import {graphql} from 'gatsby'
 
 import Layout from '../components/Layout'
 
@@ -21,13 +21,13 @@ const Tags = styled.div`
   }
 `
 
-const IndexPage = ({ data }) => {
-  const { edges: posts } = data.allMarkdownRemark
+const IndexPage = ({data}) => {
+  const {edges: posts} = data.allMarkdownRemark
   return (
     <Layout>
-      {posts.map(({ node: post }) => {
+      {posts.map(({node: post}) => {
         const {
-          frontmatter: { date, path, title, excerpt, tags },
+          frontmatter: {date, path, title, excerpt, tags},
         } = post
         return (
           <div key={date}>

@@ -1,6 +1,7 @@
 # Konekoya's blog
 
-Hi, I blog everything about FrontEnd! Things that I currently have high interest are: React, Chrome Developer Tools, React Hooks, End-to-End test.
+Hi, I blog everything about FrontEnd! Things that I currently have high interest
+are: React, Chrome Developer Tools, React Hooks, End-to-End test.
 
 ## Development
 

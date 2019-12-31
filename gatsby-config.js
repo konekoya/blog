@@ -1,31 +1,31 @@
 module.exports = {
-  pathPrefix: "blog",
+  pathPrefix: 'blog',
   siteMetadata: {
-    title: "Learning path of Joshua"
+    title: 'Learning path of Joshua',
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-prismjs",
+            resolve: 'gatsby-remark-prismjs',
             options: {
-              classPrefix: "language-",
-              aliases: { sh: "bash" }
-            }
+              classPrefix: 'language-',
+              aliases: {sh: 'bash'},
+            },
           },
           {
-            resolve: "gatsby-source-filesystem",
+            resolve: 'gatsby-source-filesystem',
             options: {
-              name: "src",
-              path: `${__dirname}/src`
-            }
-          }
-        ]
-      }
-    }
-  ]
-};
+              name: 'src',
+              path: `${__dirname}/src`,
+            },
+          },
+        ],
+      },
+    },
+  ],
+}

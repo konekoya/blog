@@ -4,8 +4,8 @@ import Link from 'gatsby-link'
 
 import Layout from '../components/Layout'
 
-const Tags = ({ pageContext }) => {
-  const { posts, tagName } = pageContext
+const Tags = ({pageContext}) => {
+  const {posts, tagName} = pageContext
 
   if (posts) {
     return (
@@ -16,7 +16,7 @@ const Tags = ({ pageContext }) => {
         <ul>
           {posts.map(post => {
             const {
-              frontmatter: { path, title, date },
+              frontmatter: {path, title, date},
             } = post
             return (
               <li key={date}>

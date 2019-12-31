@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { createGlobalStyle } from 'styled-components'
+import Link from 'gatsby-link'
+import styled, {createGlobalStyle} from 'styled-components'
 
-import Container from './Container'
-import Header from './Header'
-import Footer from './Footer'
-import { theme } from '../utils/const'
+import Provider from '../Theme'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,18 +16,73 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${theme.primary}
+    color: ${props => props.theme.primary}
   }
 `
 
-const Layout = ({ children }) => {
+const Container = styled.div`
+  /* 62px is for Footer */
+  height: calc(100vh - 62px);
+`
+
+const Header = styled.header`
+  background-color: ${props => props.theme.primary};
+
+  .inner {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .link {
+    color: white;
+    text-decoration: none;
+  }
+
+  .subtitle {
+    color: ${props => props.theme.sub};
+    font-size: 13px;
+    font-style: italic;
+  }
+`
+
+const Main = styled.main`
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+`
+
+const Footer = styled.footer`
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+`
+
+const Layout = ({children}) => {
   return (
-    <React.Fragment>
+    <Provider>
       <GlobalStyle />
-      <Header />
-      <Container>{children}</Container>
-      <Footer />
-    </React.Fragment>
+      <Container>
+        <Header>
+          <div className="inner">
+            <h1>
+              <Link className="link" to="/">
+                KONEKOYA
+              </Link>
+            </h1>
+            <span className="subtitle">I talk everything about Front-End </span>
+            ❤️
+          </div>
+        </Header>
+        <Main>{children}</Main>
+      </Container>
+      <Footer>Copyright © 2019 konekoya.</Footer>
+    </Provider>
   )
 }
 

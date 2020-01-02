@@ -1,36 +1,31 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/blog/styles.131b48b25a50eff60b34.css">code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.18.17"/><title data-react-helmet="true"></title><style data-styled="bOrpWF jqhBOK kIbktK HSNNi gpdbPG kQtbyY" data-styled-version="4.4.1">
-/* sc-component-id: Container__StyledContainer-sc-5b56ee-0 */
-.kIbktK{margin:0 auto;max-width:960px;padding:20px;}
-/* sc-component-id: Header__HeaderWrapper-sc-8i54eo-0 */
-.bOrpWF{background-color:#2c3da7;margin-bottom:20px;}
-/* sc-component-id: Header__HeaderInner-sc-8i54eo-1 */
-.jqhBOK{padding:20px;}
-/* sc-component-id: Header__H1-sc-8i54eo-2 */
-.HSNNi{font-size:30px;margin:0;}
-/* sc-component-id: Header__StyledLink-sc-8i54eo-3 */
-.gpdbPG{color:white;-webkit-text-decoration:none;text-decoration:none;}
-/* sc-component-id: Header__Subtitle-sc-8i54eo-4 */
-.kQtbyY{color:#9da9f7;font-size:13px;font-style:italic;}
-/* sc-component-id: sc-global-60868067 */
-body{margin:0;font-size:100%;font-family:'source-han-sans-traditional','Noto Sans TC','PingFang TC', 'Apple LiGothic Medium',Roboto,'Microsoft JhengHei','Lucida Grande', 'Lucida Sans Unicode',sans-serif;} a{-webkit-text-decoration:none;text-decoration:none;color:#2c3da7;}</style><link as="script" rel="preload" href="/blog/component---src-templates-blog-post-js-2add29867074efb1101e.js"/><link as="script" rel="preload" href="/blog/commons-db25813366e1b9be3471.js"/><link as="script" rel="preload" href="/blog/app-93e6922793f9da4a547f.js"/><link as="script" rel="preload" href="/blog/styles-c67bcbafb6b9d3c33b2d.js"/><link as="script" rel="preload" href="/blog/webpack-runtime-e45d23b47a27bf2d0271.js"/><link as="fetch" rel="preload" href="/blog/page-data/styled-components-tips-and-tricks/page-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div class="Header__HeaderWrapper-sc-8i54eo-0 bOrpWF"><div class="Container__StyledContainer-sc-5b56ee-0 kIbktK"><h1 class="Header__H1-sc-8i54eo-2 HSNNi"><a class="Header__StyledLink-sc-8i54eo-3 gpdbPG" href="/blog/">KONEKOYA</a></h1><span class="Header__Subtitle-sc-8i54eo-4 kQtbyY">I talk everything about Front-End</span> ❤️</div></div><div class="Container__StyledContainer-sc-5b56ee-0 kIbktK"><h1>幾個 styled-components 使用上的技巧</h1><h3>December 23, 2019</h3><div><h2>你不需要把每個元件都用 styled component 包起來</h2>
-<p>剛開始在使用 styled components 的時候我常會去把每個需要套用樣式的元件都用 styled component 包起來，像是：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> styled <span class="token keyword">from</span> <span class="token string">"styled-components"</span><span class="token punctuation">;</span>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/blog/styles.131b48b25a50eff60b34.css">code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><meta name="generator" content="Gatsby 2.18.17"/><title data-react-helmet="true"></title><style data-styled="zofnJ cWdjMK dTsWvR" data-styled-version="4.4.1">
+/* sc-component-id: sc-global-2785340900 */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700i,900,900i&display=swap'); @import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap'); body{margin:0;font-size:100%;font-family:'Varela Round',sans-serif;} ul{margin:0;padding:0;} a{-webkit-text-decoration:none;text-decoration:none;color:#1c1e2d;}
+/* sc-component-id: Layout__Container-sc-1daeug4-0 */
+.zofnJ{min-height:calc(100vh - 62px);}
+/* sc-component-id: Layout__Header-sc-1daeug4-1 */
+.cWdjMK .inner{margin:0 auto;max-width:980px;padding:20px;text-align:center;padding:100px 0;} .cWdjMK h1{font-size:80px;margin:0;font-weight:500;} .cWdjMK .link{color:#1c1e2d;-webkit-text-decoration:none;text-decoration:none;position:relative;} .cWdjMK .link:before{content:'';width:43px;height:6px;background:#420afb;display:block;position:absolute;left:12px;bottom:10px;} .cWdjMK .subtitle{font-size:13px;font-style:italic;}
+/* sc-component-id: Layout__Main-sc-1daeug4-2 */
+.dTsWvR{margin:0 auto;max-width:980px;padding:20px;}</style><link as="script" rel="preload" href="/blog/component---src-templates-blog-post-js-bca25f5caa981436a41b.js"/><link as="script" rel="preload" href="/blog/commons-1d118bfb5f3d267e9aa1.js"/><link as="script" rel="preload" href="/blog/app-a4b7f1009e8c2c05332b.js"/><link as="script" rel="preload" href="/blog/styles-c67bcbafb6b9d3c33b2d.js"/><link as="script" rel="preload" href="/blog/webpack-runtime-1dc195acb32abbde6f5c.js"/><link as="fetch" rel="preload" href="/blog/page-data/styled-components-tips-and-tricks/page-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div class="Layout__Container-sc-1daeug4-0 zofnJ"><header class="Layout__Header-sc-1daeug4-1 cWdjMK"><div class="inner"><h1><a class="link" href="/blog/">konekoya</a></h1><span class="subtitle">Talks mostly about Front-End </span></div></header><main class="Layout__Main-sc-1daeug4-2 dTsWvR"><h1>Tips for using styled-components</h1><h3>December 23, 2019</h3><div><h2>技巧 1： 你不需要把每個元件都用 styled component 包起來</h2>
+<p>剛開始在使用 styled components 的時候我常會去把每個需要套用樣式的元件都用 styled
+components 包起來，像是：</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> styled <span class="token keyword">from</span> <span class="token string">'styled-components'</span>
 
 <span class="token keyword">const</span> Header <span class="token operator">=</span> styled<span class="token punctuation">.</span>header<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
   display: flex;
-</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span><span class="token template-punctuation string">`</span></span>
 
 <span class="token keyword">const</span> <span class="token constant">H1</span> <span class="token operator">=</span> styled<span class="token punctuation">.</span>h1<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
   font-weight: normal;
-</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span><span class="token template-punctuation string">`</span></span>
 
 <span class="token keyword">const</span> <span class="token constant">H2</span> <span class="token operator">=</span> styled<span class="token punctuation">.</span><span class="token constant">H2</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
   font-size: 22px;
-</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span><span class="token template-punctuation string">`</span></span>
 
 <span class="token keyword">const</span> Span <span class="token operator">=</span> styled<span class="token punctuation">.</span>span<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
   color: #ff4400;
-</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span><span class="token template-punctuation string">`</span></span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">Example</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -40,10 +35,13 @@ body{margin:0;font-size:100%;font-family:'source-han-sans-traditional','Noto San
       <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token constant">H1</span><span class="token operator">></span>
       <span class="token operator">&lt;</span><span class="token constant">H2</span><span class="token operator">></span>This is an awesome site built by me <span class="token punctuation">:</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span><span class="token constant">H2</span><span class="token operator">></span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>Header<span class="token operator">></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
-<p>這樣的程式碼寫久了之後就會發現一個問題，一個就是每次你需要給某個元件樣式時，你都需要重新用 styled component 把那個 React 元件/HTML 元素重新命名，光是想名字就很麻煩，而且有時候真的就只是加上一行 CSS 屬性而以。但其實 styled component 也提供了另一種寫法，使用上比較像是 Sass 的用法：</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> styled <span class="token keyword">from</span> <span class="token string">"styled-components"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>這樣的程式碼寫久了之後就會發現一個問題：每次你需要給某個元件樣式時，你都需要重新
+用 styled components 把那個 React 元件/HTML 元素重新命名，光是想名字就很麻煩，而
+且有時候真的就只是加上一行 CSS 屬性而以。但其實 styled component 也提供了另一種
+寫法，使用上比較像是 Sass/Scss 的用法：</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> styled <span class="token keyword">from</span> <span class="token string">'styled-components'</span>
 
 <span class="token keyword">const</span> Header <span class="token operator">=</span> styled<span class="token punctuation">.</span>header<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
   display: flex;
@@ -59,7 +57,7 @@ body{margin:0;font-size:100%;font-family:'source-han-sans-traditional','Noto San
   .highlight {
     color: #ff4400;
   }
-</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span><span class="token template-punctuation string">`</span></span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">Example</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>
@@ -69,5 +67,10 @@ body{margin:0;font-size:100%;font-family:'source-han-sans-traditional','Noto San
       <span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
       <span class="token operator">&lt;</span>h2<span class="token operator">></span>This is an awesome site built by me <span class="token punctuation">:</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>Header<span class="token operator">></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div></div><p></p><p><a href="/blog/in-the-beginning">Next: <!-- -->用 Gatsby 來建立一個部落格</a></p></div><div class="Container__StyledContainer-sc-5b56ee-0 kIbktK">Copyright © 2019 konekoya.</div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/styled-components-tips-and-tricks";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-93e6922793f9da4a547f.js"],"component---src-templates-all-tags-js":["/component---src-templates-all-tags-js-563fc7e093cc1e9d75ca.js"],"component---src-templates-tags-js":["/component---src-templates-tags-js-74e14641148dfb9a20da.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-2add29867074efb1101e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-d8547cd6970079499799.js"],"component---src-pages-about-js":["/component---src-pages-about-js-24474972740c5e47e526.js"],"component---src-pages-index-js":["/component---src-pages-index-js-f12c9c38a01317a1e022.js"]};/*]]>*/</script><script src="/blog/webpack-runtime-e45d23b47a27bf2d0271.js" async=""></script><script src="/blog/styles-c67bcbafb6b9d3c33b2d.js" async=""></script><script src="/blog/app-93e6922793f9da4a547f.js" async=""></script><script src="/blog/commons-db25813366e1b9be3471.js" async=""></script><script src="/blog/component---src-templates-blog-post-js-2add29867074efb1101e.js" async=""></script></body></html>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>這樣看起來的就乾淨多了，如果一個元件的樣式比較多時，通常我還會把樣式抽出來放在另
+一個檔案裡，像是這樣：</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">- components
+  - componentA.js
+  - componentsAStyles.js</code></pre></div></div><p><a href="/blog/in-the-beginning">Previous: <!-- -->Build a blog with Gatsby</a></p><p></p></main></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/styled-components-tips-and-tricks";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-a4b7f1009e8c2c05332b.js"],"component---src-templates-all-tags-js":["/component---src-templates-all-tags-js-d865aa02f892bae2419f.js"],"component---src-templates-tags-js":["/component---src-templates-tags-js-ba7969e4692c27d86d20.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-bca25f5caa981436a41b.js"],"component---src-pages-404-js":["/component---src-pages-404-js-d8547cd6970079499799.js"],"component---src-pages-about-js":["/component---src-pages-about-js-c15c062d0ff2e530d3b4.js"],"component---src-pages-index-js":["/component---src-pages-index-js-fab06f6a7a936b477fc1.js"]};/*]]>*/</script><script src="/blog/webpack-runtime-1dc195acb32abbde6f5c.js" async=""></script><script src="/blog/styles-c67bcbafb6b9d3c33b2d.js" async=""></script><script src="/blog/app-a4b7f1009e8c2c05332b.js" async=""></script><script src="/blog/commons-1d118bfb5f3d267e9aa1.js" async=""></script><script src="/blog/component---src-templates-blog-post-js-bca25f5caa981436a41b.js" async=""></script></body></html>

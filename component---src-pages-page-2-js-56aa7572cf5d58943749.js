@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{p5nM:function(e,t,n){"use strict";n.r(t);n("q1tI");var o=n("+ZDr"),a=n.n(o),c=n("qKvR");t.default=function(){return Object(c.a)("div",null,Object(c.a)("h1",null,"Hi from the second page"),Object(c.a)("p",null,"Welcome to page 2"),Object(c.a)(a.a,{to:"/"},"Go back to the homepage"))}}}]);
-//# sourceMappingURL=component---src-pages-page-2-js-56aa7572cf5d58943749.js.map

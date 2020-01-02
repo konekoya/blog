@@ -1,51 +1,70 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import styled, {createGlobalStyle} from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
-import Provider from '../Theme'
+import ThemeWrapper from '../Theme'
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
   body {
     margin: 0;
     font-size: 100%;
-    font-family: 'source-han-sans-traditional', 'Noto Sans TC', 'PingFang TC',
-    'Apple LiGothic Medium', Roboto, 'Microsoft JhengHei', 'Lucida Grande',
-    'Lucida Sans Unicode', sans-serif;
+    font-family: 'Varela Round', sans-serif;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
   }
 
   a {
     text-decoration: none;
-    color: ${props => props.theme.primary}
+    color: ${props => props.theme.text.primary}
   }
 `
 
 const Container = styled.div`
   /* 62px is for Footer */
-  height: calc(100vh - 62px);
+  min-height: calc(100vh - 62px);
 `
 
 const Header = styled.header`
-  background-color: ${props => props.theme.primary};
-
   .inner {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 980px;
     padding: 20px;
+    text-align: center;
+    padding: 100px 0;
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 80px;
     margin: 0;
+    font-weight: 500;
   }
 
   .link {
-    color: white;
+    color: ${props => props.theme.text.primary};
     text-decoration: none;
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 43px;
+      height: 6px;
+      background: ${props => props.theme.primary.main};
+      display: block;
+      position: absolute;
+      left: 12px;
+      bottom: 10px;
+    }
   }
 
   .subtitle {
-    color: ${props => props.theme.sub};
+    color: ${props => props.theme.text.light};
     font-size: 13px;
     font-style: italic;
   }
@@ -53,36 +72,28 @@ const Header = styled.header`
 
 const Main = styled.main`
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 980px;
   padding: 20px;
 `
 
-const Footer = styled.footer`
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 20px;
-`
-
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
-    <Provider>
+    <ThemeWrapper>
       <GlobalStyle />
       <Container>
         <Header>
           <div className="inner">
             <h1>
               <Link className="link" to="/">
-                KONEKOYA
+                konekoya
               </Link>
             </h1>
-            <span className="subtitle">I talk everything about Front-End </span>
-            ❤️
+            <span className="subtitle">Talks mostly about Front-End </span>
           </div>
         </Header>
         <Main>{children}</Main>
       </Container>
-      <Footer>Copyright © 2019 konekoya.</Footer>
-    </Provider>
+    </ThemeWrapper>
   )
 }
 

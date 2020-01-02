@@ -1,22 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-const Template = ({data, pageContext}) => {
-  const {markdownRemark: post} = data
-  const {frontmatter, html} = post
-  const {title, date} = frontmatter
-  const {next, prev} = pageContext
+const Template = ({ data, pageContext }) => {
+  const { markdownRemark: post } = data
+  const { frontmatter, html } = post
+  const { title, date } = frontmatter
+  const { next, prev } = pageContext
 
   return (
     <Layout>
       <h1>{title}</h1>
       <h3>{date}</h3>
 
-      <div dangerouslySetInnerHTML={{__html: html}} />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
 
       <p>
         {prev && (
@@ -36,7 +36,7 @@ const Template = ({data, pageContext}) => {
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: {path: {eq: $path}}) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
         title

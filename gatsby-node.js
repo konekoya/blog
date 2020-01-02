@@ -6,7 +6,7 @@ const createTagPages = (createPage, posts) => {
 
   const postsByTags = {}
 
-  posts.forEach(({node}) => {
+  posts.forEach(({ node }) => {
     if (node.frontmatter.tags) {
       node.frontmatter.tags.forEach(tag => {
         if (!postsByTags[tag]) {
@@ -42,8 +42,8 @@ const createTagPages = (createPage, posts) => {
   })
 }
 
-exports.createPages = ({actions, graphql}) => {
-  const {createPage} = actions
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
   const blogPostTemplate = path.resolve('src/templates/blog-post.js')
 
   // If you are experiencing issues with the ordering of the posts on the homepage,
@@ -77,7 +77,7 @@ exports.createPages = ({actions, graphql}) => {
 
     createTagPages(createPage, posts)
 
-    posts.forEach(({node}, index) => {
+    posts.forEach(({ node }, index) => {
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,

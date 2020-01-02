@@ -11,10 +11,12 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "clean": "gatsby clean",
+    "clean:gatsby": "gatsby clean",
+    "clean:deps": "rm -rf ./node_modules",
+    "clean": "run-s clean:gatsby clean:deps",
     "predeploy": "yarn lint && yarn build --prefix-paths",
     "deploy": "gh-pages -d public",
-    "start": "npm-run-all --parallel develop lint:watch",
+    "start": "run-p develop lint:watch",
     "lint": "esw src --cache",
     "lint:watch": "yarn lint --watch",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|graphql|md|mdx)\""

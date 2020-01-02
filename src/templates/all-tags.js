@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
-const AllTags = ({pageContext}) => {
-  const {tags} = pageContext
+const AllTags = ({ pageContext }) => {
+  const { tags } = pageContext
 
   if (tags) {
     return (

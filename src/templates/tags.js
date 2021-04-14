@@ -14,7 +14,7 @@ const Tags = ({ pageContext }) => {
           <span>Posts about {tagName}:</span>
         </div>
         <ul>
-          {posts.map(post => {
+          {posts.map((post) => {
             const {
               frontmatter: { path, title, date },
             } = post

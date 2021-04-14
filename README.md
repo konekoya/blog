@@ -5,6 +5,14 @@ are: React, Chrome Developer Tools, React Hooks, End-to-End test.
 
 ## Development
 
+First, install the dependencies
+
+```sh
+yarn
+```
+
+Start the development server:
+
 ```sh
 yarn start
 ```
@@ -24,5 +32,5 @@ yarn build
 ## Publish blog to GitHub
 
 ```sh
-yarn publish
+yarn deploy
 ```

@@ -1,13 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Helmet } from 'react-helmet'
 import styled, { createGlobalStyle } from 'styled-components'
-
 import ThemeWrapper from '../Theme'
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700i,900,900i&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
 
   body {
     margin: 0;
@@ -22,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${props => props.theme.text.primary}
+    color: ${(props) => props.theme.text.primary}
   }
 `
 
@@ -47,7 +45,7 @@ const Header = styled.header`
   }
 
   .link {
-    color: ${props => props.theme.text.primary};
+    color: ${(props) => props.theme.text.primary};
     text-decoration: none;
     position: relative;
 
@@ -55,7 +53,7 @@ const Header = styled.header`
       content: '';
       width: 43px;
       height: 6px;
-      background: ${props => props.theme.primary.main};
+      background: ${(props) => props.theme.primary.main};
       display: block;
       position: absolute;
       left: 12px;
@@ -64,7 +62,7 @@ const Header = styled.header`
   }
 
   .subtitle {
-    color: ${props => props.theme.text.light};
+    color: ${(props) => props.theme.text.light};
     font-size: 13px;
     font-style: italic;
   }
@@ -79,6 +77,16 @@ const Main = styled.main`
 const Layout = ({ children }) => {
   return (
     <ThemeWrapper>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700i,900,900i&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
       <GlobalStyle />
       <Container>
         <Header>

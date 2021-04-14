@@ -1,0 +1,2 @@
+(self.webpackChunkkonekoya_blog=self.webpackChunkkonekoya_blog||[]).push([[682],{5518:function(e,t,n){"use strict";n.r(t);var l=n(7294),o=n(8902);t.default=function(){return l.createElement("div",null,l.createElement("h1",null,"Hi from the second page"),l.createElement("p",null,"Welcome to page 2"),l.createElement(o.ZP,{to:"/"},"Go back to the homepage"))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-151b5fbe39f4bd77f353.js.map

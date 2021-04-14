@@ -1,0 +1,2 @@
+(self.webpackChunkkonekoya_blog=self.webpackChunkkonekoya_blog||[]).push([[883],{9616:function(e,t,n){"use strict";n.r(t);var l=n(7294);t.default=function(){return l.createElement("div",null,l.createElement("h1",null,"NOT FOUND"),l.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-2ba92b6ce960d34bf552.js.map

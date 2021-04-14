@@ -1,0 +1,2 @@
+(self.webpackChunkkonekoya_blog=self.webpackChunkkonekoya_blog||[]).push([[281],{5474:function(e,t,n){"use strict";n.r(t);var a=n(7294),l=n(8902);t.default=function(e){var t=e.pageContext.tags;if(t)return a.createElement("div",null,a.createElement("ul",null,t.map((function(e){return a.createElement("li",{key:e},a.createElement(l.ZP,{to:"/tags/"+e},e))}))))}}}]);
+//# sourceMappingURL=component---src-templates-all-tags-js-07780a6a37c4671b20c1.js.map

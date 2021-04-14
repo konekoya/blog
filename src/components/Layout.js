@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${(props) => props.theme.text.primary}
+    color: ${(props) => props.theme.primary.main}
   }
 `
 

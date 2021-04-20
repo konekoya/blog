@@ -44,20 +44,6 @@ Repo 裡包含我所有學習中使用到的資源
   是福音 😆，雖然免費的內容不多，但是整個走一遍後，我自己覺得是對這個語言本身可
   以有一定層度的熟悉了
 
-## IDE (integrated development environment)
-
-The primary IDE for ISO/Swift development are Xcode
-
-#### Keyboard shortcuts
-
-`cmd` + `opt` + `p`: Resume preview
-
-`cmd` + `r`: Build and run the IOS device simulator
-
-`cmd` + `u`: Run unit tests
-
-`cmd` + `b`: Build the app
-
 ## REPL (Read, evaluate, print, loop)
 
 Swift also support REPL for fast debugging or just play with the language, open
@@ -203,6 +189,46 @@ func showMessage(_ name: String) {
 showMessage("Simon") // Hello, Simon!
 ```
 
+### Closure
+
+```swift
+struct Book {
+  var title: String
+  var authorLastName: String
+  var authorFirstName: String
+  var readingAge: Int
+  var pageCount: Int
+}
+
+
+let book1 = Book(title: "Where the Wild Things Are", authorLastName: "Sendak", authorFirstName: "Maurice", readingAge: 4, pageCount: 48)
+let book2 = Book(title: "The Little Prince", authorLastName: "de Sanit-Exupery", authorFirstName: "Antoine", readingAge: 10, pageCount: 96)
+var book3 = Book(title: "Oh, the Places You'll Go", authorLastName: "Seuss", authorFirstName: "Dr.", readingAge: 10, pageCount: 56)
+var book4 = Book(title: "Goodnight Moon", authorLastName: "Wise Brown", authorFirstName: "Margaret", readingAge: 1, pageCount: 30)
+var book5 = Book(title: "The Hobbit", authorLastName: "Tolkien", authorFirstName: "J.R.R", readingAge: 12, pageCount: 300)
+
+let allBooks = [book1, book2, book3, book4, book5]
+
+// Covert a verbose closure to a one liner
+// The `in` keyword is needed in order to separate the type and function definition
+var sortedBooks = allBooks.sorted(by: { (firstBook: Book, secondBook: Book) -> Bool in
+  if firstBook.readingAge < secondBook.readingAge {
+    return true
+  } else {
+    return false
+  }
+})
+
+// Some concept here:
+// `$n` represents the parameters
+// Since this function only returns one thing, we can omit the `return` keyword
+// trailing closure is used, so we don't have to put our closure in `sorted(by: {...})` and instead `sorted {...}`
+var sortedBooks = allBooks.sorted { $0.readingAge < $1.readingAge }
+
+print(sortedBooks) // outputs the sorted array
+
+```
+
 It's also common to rename argument labels to make the function call more
 readable. Some good examples from the built in API:
 
@@ -298,6 +324,109 @@ print(second.releaseYear)
 print(first.summary())
 
 ```
+
+### Class
+
+> In swift, there's no need to use `new` keyword for creating a new class like
+> in JS
+
+```swift
+class Appliance {
+  // Properties
+  var manufacturer: String
+  var model: String
+  var voltage: Int
+  var capacity: Int?
+
+
+  // Initializer, no need for `func` keyword, this func is called when a new class is initilized
+  init() {
+    self.manufacturer = "Default manufacturer"
+    self.model = "Default model"
+    self.voltage = 120
+  }
+
+  // Deinitializer - only allowed in a class
+  deinit {
+    // Perform cleanup code here...
+    // Release a file resource
+    // Release a netword resource
+  }
+
+  // Methods
+  func getDetails() -> String {
+    var message = "This is the \(self.model) from \(self.manufacturer)."
+    if self.voltage >= 220 {
+      message += " This model is for European usage."
+    }
+
+    return message
+  }
+
+  // Final keyword prevent this method from override by SubClass
+  final func doNothing() {
+    print("This does nothing :(")
+  }
+}
+
+var kettle = Appliance()
+
+print(kettle.manufacturer) // "Default manufacturer"
+
+// Create a Sub class
+
+class Toaster: Appliance {
+
+  // New properties
+  var slices: Int
+
+  // Override Super class init
+  override init() {
+    self.slices = 2
+
+    // Call Super class' method
+    super.init()
+  }
+
+  // New method
+  func toast() {
+    print("Irradiating now...")
+  }
+}
+
+var toaster = Toaster()
+
+toaster.toast() // Irradiating now...
+
+```
+
+### Extension
+
+```swift
+// Use extension to easily adding new functionalities to existing structs
+extension String {
+  func removeSpaces() -> String {
+    let filtered = self.filter { $0 != " "}
+    return String(filtered)
+  }
+}
+
+
+let album = "Decks and drums and rock and roll"
+let scriptio = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet"
+let phrase = "Nothing stops love"
+
+print(album.removeSpaces()) // Decksanddrumsandrockandroll
+print(scriptio.removeSpaces()) // Nequeporroquisquamestquidoloremipsumquiadolorsitamet
+print(phrase.removeSpaces()) // Nothingstopslove
+
+```
+
+Main differences between `classes` and `structs`
+
+1. Classes are by reference type, struct are by value type
+2. structs have member wide init method
+3. Only classes have inheritance, not `struct` or `enum`
 
 ## SwiftUI
 

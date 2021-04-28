@@ -6,8 +6,8 @@ tags: ['iOS', 'Swift', 'Xcode', 'IDE']
 excerpt: ''
 ---
 
-> This post will be edited as in the process of learning iOS development and
-> Xcode :)
+> This post will be edited as I'm still in the process of learning iOS
+> development and Xcode :)
 
 The primary IDE for ISO/Swift development are Xcode
 
@@ -18,42 +18,41 @@ to search the keyboard shortcuts
 
 #### Some basic keyboard shortcuts
 
-`cmd` + `opt` + `p`: Resume preview
+`cmd` + `opt` + `P`: Resume preview
 
-`cmd` + `r`: Build and run the IOS device simulator
+`cmd` + `R`: Build and run the IOS device simulator
 
 `cmd` + `.`: Stop the simulator
 
-`cmd` + `u`: Run unit tests
+`cmd` + `U`: Run unit tests
 
-`cmd` + `b`: Build the app
+`cmd` + `B`: Build the app
 
-`cmd` + `0`: Toggle navigator
+`cmd` + `shift` + `L`: Open SwiftUI library
 
-- `cmd` + `1`: Open project navigator
-- `cmd` + `5`: Open issue navigator
+#### Editor panels
 
-`cmd` + `opt` + `0`: Toggle inspector
-
-`cmd` + `enter`: Only display editor
-
-`cmd` + `shift` + `y`: Toggle debug area
-
-`cmd` + `opt` + `enter`: Toggle canvas
-
-`cmd` + `shift` + `l`: Open SwiftUI library
+- `cmd` + `opt` + `0`: Toggle inspector
+- `cmd` + `enter`: Only display editor
+- `cmd` + `opt` + `enter`: Toggle canvas
+- `cmd` + `0`: Toggle navigator
+  - `cmd` + `1`: Open project navigator
+  - `cmd` + `5`: Open issue navigator
+- `cmd` + `shift` + `Y`: Toggle debug area
+- `cmd` + `J`: Move focus between different editors
 
 #### Projects and Files
 
-- `cmd` + `n`: To create a new file
-- `cmd` + `o` and select _xcodeproj_ file in the project to open a previous
+- `cmd` + `N`: To create a new file
+- `cmd` + `shift` + `N`: To create a new project
+- `cmd` + `O` and select _xcodeproj_ file in the project to open a previous
   project
-- `cmd` + `shift` + `n`: To create a new project
-- `cmd` + `: Cycle thru the opened projects
+- `cmd` + `` ` `` : Cycle through the opened projects
+- `cmd` + `shift` + `0`: Open Developer Documentation
 
 #### Navigate between your project
 
-`cmd` + `shift` + `o`: To open the open quickly palette
+`cmd` + `shift` + `O`: To open the open quickly palette
 
 - You can search not only the file but also the methods or even properties as
   well
@@ -62,11 +61,11 @@ to search the keyboard shortcuts
 - You can hold the `opt` key with the file you just found to open it in
   assistant editor (split view)
 
-`cmd` + `ctrl` + mouse click (or use `j` key): Jump to definition
+`cmd` + `ctrl` + mouse click (or use `J` key): Jump to definition
 
 - Same like open quickly, you can use `cmd` + `ctrl` + left arrow key or right
   arrow key to jump between files
-- Use `cmd` + `opt` + `ctrl` + `j`: You can jump to the definition and open it
+- Use `cmd` + `opt` + `ctrl` + `J`: You can jump to the definition and open it
   in the assistant editor
 
 `cmd` + `shift` + `[`: Navigate to the previous (on the left hand side) tab
@@ -75,23 +74,29 @@ to search the keyboard shortcuts
 
 #### Fix code indentation
 
-Select everything with `cmd` + `a` and then hit `ctrl` + `i`
+Select everything with `cmd` + `A` and then hit `ctrl` + `I`
 
 #### Code editing
 
-- `cmd` + `k`: Delete a line
-- `cmd` + `opt` + `e`: Select next occurrence
+- `cmd` + `Z`: Undo
+- `cmd` + `shift` + `Z`: Redo
+- `cmd` + `C`: Copy
+- `cmd` + `V`: Paste
+- `cmd` + `X`: Cut
+- `cmd` + `opt` + `E`: Select next occurrence
 - `ctrl` + `shift` + mouse click: Selecting multiple lines
 - `cmd` + `opt` + `[`: Move current line up one line
 - `cmd` + `opt` + `]`: Move current line down one line
 - Hold the `cmd` key and hover over the curly braces: Xcode will show you the
   matching curly braces. And double click will highlight the entire body of the
   selected curly braces
-- Hold the `cmd` key and mouse click on the code will bring up the context menu.
-  Here many useful actions can be used:
+- Hold the `cmd` key and mouse click on the SwiftUI element (Or, use keyboard
+  shortcut: `cmd` + `shift` + `A` ) will bring up the context menu. Here many
+  useful actions can be used:
   - Extract: you can extract code to method or variable or even to `SubView`s.
   - Embed: just like extract, you can embed selected code with a wrapper, like
     `VStack`, `HStack` or a `List`
+- `ctrl` + `opt` + mouse click on a SwiftUI element will bring up the inspector
 
 #### Jump bar
 
@@ -102,7 +107,7 @@ Select everything with `cmd` + `a` and then hit `ctrl` + `i`
 
 #### Minimap
 
-- `cmd` + `ctrl` + `shift` + `m`: Toggle minimap
+- `cmd` + `ctrl` + `shift` + `M`: Toggle minimap
 - `MARK` can be seen on minimap
 
 ### Nice default:
@@ -124,3 +129,12 @@ Select everything with `cmd` + `a` and then hit `ctrl` + `i`
 - **Theme**: I don't like the default theme by Xcode, you can go to preferences
   -> Themes and pick one that you like. Another option is to use a custom theme
   by someone like this [one](https://draculatheme.com/xcode)
+
+- **Keyboard shortcuts**: Some of the shortcuts in Xcode are really hard for me
+  to re-learn (I've used VScode for years) and so I've done some small tweaks
+  which make me really happy with Xcode :)
+  - Add a delete line: `cmd` + `K`
+  - Change open quickly to: `cmd` + `P` (I have no idea why Xcode use `cmd` +
+    `p` for print...)
+  - Change move a line up and down to: `opt` + up and down arrow keys
+  - Change show (toggle) debug area: `cmd` + `T`

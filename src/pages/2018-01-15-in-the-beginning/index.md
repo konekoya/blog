@@ -3,7 +3,10 @@ path: '/in-the-beginning'
 date: '2018-01-15'
 title: 'Build a blog with Gatsby'
 tags: ['前端', 'Gatsby', 'React', 'HowTo']
-excerpt: ''
+excerpt:
+  '在 2017 年底我參加了 iT
+  邦幫忙辦的鐵人賽，挑戰連續三十天不中斷的發文，而我寫的主題是Chrome
+  開發者工具，在經歷痛苦的三十天後 XD，我跟隊友一起完成了這個比賽。'
 ---
 
 在 2017 年底我參加了 iT 邦幫忙辦的鐵人賽，挑戰連續三十天不中斷的發文，而我寫的主

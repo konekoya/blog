@@ -70,7 +70,7 @@ const Header = styled.header`
 
 const Main = styled.main`
   margin: 0 auto;
-  max-width: 980px;
+  max-width: 800px;
   padding: 20px;
 `
 

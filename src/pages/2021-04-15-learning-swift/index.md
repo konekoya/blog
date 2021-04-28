@@ -3,7 +3,11 @@ path: '/learning-swift'
 date: '2021-04-15'
 title: '學習 Swift'
 tags: ['iOS', 'Swift', 'Learning']
-excerpt: ''
+excerpt:
+  '因為工作的需要這陣子開始要學習 Swift
+  這個語言，在學習結束前我們公司常例會做一點
+  學習後的分享，所以我想剛好也利用這個機會把一些學習的心得跟學習的資源整理成幾篇文
+  章'
 ---
 
 ## 為什麼要學習這個語言

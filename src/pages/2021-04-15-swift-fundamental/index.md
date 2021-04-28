@@ -3,7 +3,9 @@ path: '/swift-fundamental'
 date: '2021-04-15'
 title: 'Swift fundamental'
 tags: ['iOS', 'Swift', 'Xcode', 'IDE']
-excerpt: ''
+excerpt:
+  "This is a beginner's guide that walks you through some of Swift's language
+  cores"
 ---
 
 This is a beginner's guide that walks you through some of Swift's language cores

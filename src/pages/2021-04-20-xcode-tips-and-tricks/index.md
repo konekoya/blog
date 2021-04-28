@@ -3,7 +3,7 @@ path: '/xcode-tips-and-tricks'
 date: '2021-04-20'
 title: 'Xcode tips and tricks'
 tags: ['iOS', 'Swift', 'Xcode', 'IDE']
-excerpt: ''
+excerpt: 'The primary IDE for ISO/Swift development are Xcode'
 ---
 
 > This post will be edited as I'm still in the process of learning iOS

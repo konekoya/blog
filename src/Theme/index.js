@@ -1,5 +1,5 @@
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 const theme = {
@@ -22,8 +22,8 @@ const theme = {
     contrastText: '#fff',
   },
   text: {
-    primary: '#1c1e2d',
-    secondary: '#434556',
+    primary: '#29292c',
+    secondary: '#454547',
   },
   hr: '#dedede',
 }
